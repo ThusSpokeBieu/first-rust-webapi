@@ -9,7 +9,7 @@ pub struct User {
   pub cpf: String,
   pub password: String,
   pub age: i32,
-  pub isActive: bool,
+  pub is_active: bool,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, ToSchema)]
