@@ -2,6 +2,7 @@ use ntex::web;
 
 mod services;
 mod error;
+mod models;
 
 #[web::get("/")]
 async fn index() -> &'static str {
@@ -12,6 +13,7 @@ async fn index() -> &'static str {
 async fn main() -> std::io::Result<()> {
   web::server(|| {
     web::App::new()
+      .configure(services::openapi::ntex_config)
       .configure(services::user::ntex_config)
       .default_service(web::route().to(services::default))
   })
