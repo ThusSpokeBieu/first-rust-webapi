@@ -2,6 +2,7 @@ use ntex::web;
 
 mod services;
 mod error;
+mod models;
 
 #[web::get("/")]
 async fn index() -> &'static str {
